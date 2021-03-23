@@ -5,15 +5,6 @@ import shutil
 
 import piexif
 
-import PIL.Image
-import PIL.ExifTags
-from GPSPhoto import gpsphoto
-
-
-# build reverse dicts
-_TAGS_r = dict(((v, k) for k, v in PIL.ExifTags.TAGS.items()))
-_GPSTAGS_r = dict(((v, k) for k, v in PIL.ExifTags.GPSTAGS.items()))
-
 
 class ImageError(Exception):
 	pass
@@ -21,11 +12,7 @@ class ImageError(Exception):
 
 class Image:
 	def __init__(self, filename, newfilename=None):
-
-		#self.image = PIL.Image.open(filename)
 		self.exif = piexif.load(filename)
-		# self.exif = self.img.read_exif()
-		# self.exif = piexif.load(PIL.Image.open(filename).info["exif"])
 		self.filename = filename
 		if not newfilename:
 			self.newfilename = os.path.splitext(filename)[0] + "_orig" + os.path.splitext(filename)[1]
@@ -40,9 +27,6 @@ class Image:
 		def to_deg_decimal(val):
 			assert len(val) == 3
 			deg, min, sec = val
-			d = to_float(deg)
-			m = to_float(min)
-			s = to_float(sec)
 
 			deg_dec = to_float(deg) + to_float(min) / 60 + to_float(sec) / 3600
 			return deg_dec
