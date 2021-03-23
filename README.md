@@ -4,7 +4,7 @@
 # fit2geo
 Python Script to geotag a collection of pictures with coordinates coming from a [FIT Activity File](https://developer.garmin.com/fit/file-types/activity/).
 
-This tool uses [pexif](https://github.com/bennoleslie/pexif) to extract and modify EXIF data in JPEG files, and [fitdecode](https://github.com/polyvertex/fitdecode) for parsing FIT activity files and extracting locations.
+This tool uses [Piexif](https://github.com/hMatoba/Piexif) to extract and modify EXIF data in JPEG files, and [fitdecode](https://github.com/polyvertex/fitdecode) for parsing FIT activity files and extracting locations.
 
 ## Usage example:
 
