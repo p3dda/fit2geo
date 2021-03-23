@@ -1,3 +1,6 @@
+![Build](https://github.com/p3dda/fit2geo/actions/workflows/build_images.yml/badge.svg)
+[![Docker Pulls](https://img.shields.io/docker/pulls/p3dda/fit2geo.svg?style=flat-square)](https://hub.docker.com/r/p3dda/fit2geo/)
+
 # fit2geo
 Python Script to geotag a collection of pictures with coordinates coming from a [FIT Activity File](https://developer.garmin.com/fit/file-types/activity/).
 
@@ -6,7 +9,12 @@ This tool uses [pexif](https://github.com/bennoleslie/pexif) to extract and modi
 ## Usage example:
 
 ```
-python3 main.py -h                                                                       1 ↵  3.9.2 (fit2geo)    1.70    
+python3 main.py --fitfile ./my_garmin_recording.fit --photo ./100MEDIA
+```
+
+### Complete usage 
+```
+python3 main.py -h
 usage: main.py [-h] [--fitfile FITFILE] [--photo PHOTO] [--timezone TIMEZONE] [--backup]
 
 Geotag photos from fit file
@@ -21,3 +29,6 @@ optional arguments:
   --backup, -b          Backup original file
 ```
 
+## Docker usage
+```
+docker run --rm -v ./my_garmin_recording.fit:/activity.fit -v ./100MEDIA:/photos p3dda/fit2geo 
