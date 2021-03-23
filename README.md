@@ -32,3 +32,4 @@ optional arguments:
 ## Docker usage
 ```
 docker run --rm -v ./my_garmin_recording.fit:/activity.fit -v ./100MEDIA:/photos p3dda/fit2geo 
+```
