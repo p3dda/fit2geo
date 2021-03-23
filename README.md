@@ -1,5 +1,5 @@
 ![Build](https://github.com/p3dda/fit2geo/actions/workflows/build_images.yml/badge.svg)
-[![Docker Pulls](https://img.shields.io/docker/pulls/p3dda/fit2geo.svg?style=flat-square)](https://hub.docker.com/r/p3dda/fit2geo/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/p3dda/fit2geo.svg)](https://hub.docker.com/r/p3dda/fit2geo/)
 
 # fit2geo
 Python Script to geotag a collection of pictures with coordinates coming from a [FIT Activity File](https://developer.garmin.com/fit/file-types/activity/).
