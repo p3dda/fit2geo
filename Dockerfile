@@ -7,3 +7,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 ENTRYPOINT ["/app/main.py", "--fitfile", "/activity.fit", "--photo", "/photos"]
+CMD []
