@@ -27,6 +27,7 @@ optional arguments:
                         Photo file or directory
   --timezone TIMEZONE   Photo timezone
   --backup, -b          Backup original file
+  --force, -F           Override existing location
 ```
 
 ## Docker usage

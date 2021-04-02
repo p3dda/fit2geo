@@ -43,7 +43,7 @@ class Image:
 		dt = timezone.localize(datetime.datetime.strptime(timestamp, "%Y:%m:%d %H:%M:%S"))
 		return dt
 
-	def set_geotagging(self, lat, lon, alt, ts, force=False, backup=False):
+	def set_geotagging(self, lat, lon, alt, force=False, backup=False):
 		def to_deg(value, loc):
 			if value < 0:
 				loc_value = loc[0]

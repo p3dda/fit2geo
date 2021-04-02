@@ -14,6 +14,7 @@ def main():
 	parser.add_argument("--photo", "-p", type=str, help="Photo file or directory")
 	parser.add_argument("--timezone", type=str, help="Photo timezone", default="Europe/Berlin")
 	parser.add_argument("--backup", "-b", action="store_true", default=False, help="Backup original file")
+	parser.add_argument("--force", "-F", action="store_true", default=False, help="Override existing location")
 
 	args = parser.parse_args()
 
@@ -36,14 +37,15 @@ def main():
 	for i in images:
 		print("%s... \t\t" % i, end='')
 		img = image.Image(i)
-		if img.has_geotagging():
+		if img.has_geotagging() and not args.force:
 			print("Has location data")
 			continue
 		else:
 			try:
 				ts = img.get_timestamp(tz)
+				print(ts)
 				(lat, lon, alt) = fit.get_position(ts)
-				if img.set_geotagging(lat, lon, int(alt), ts, backup=args.backup):
+				if img.set_geotagging(lat, lon, int(alt), force=args.force, backup=args.backup):
 					print("OK")
 				else:
 					print("Fail")
