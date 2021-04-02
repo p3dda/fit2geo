@@ -43,7 +43,6 @@ def main():
 		else:
 			try:
 				ts = img.get_timestamp(tz)
-				print(ts)
 				(lat, lon, alt) = fit.get_position(ts)
 				if img.set_geotagging(lat, lon, int(alt), force=args.force, backup=args.backup):
 					print("OK")
