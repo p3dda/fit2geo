@@ -22,8 +22,10 @@ def main():
 		print("No such file: %s" % args.fitfile)
 		sys.exit(1)
 
+	print("Parsing file: %s ... \t\t" % args.fitfile, end='')
 	fit = fitreader.FitFileReader(args.fitfile)
 	fit.parse()
+	print("OK")
 
 	if os.path.isfile(args.photo):
 		images = [args.photo, ]
