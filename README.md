@@ -15,7 +15,7 @@ python3 main.py --fitfile ./my_garmin_recording.fit --photo ./100MEDIA
 ### Complete usage 
 ```
 python3 main.py -h
-usage: main.py [-h] [--fitfile FITFILE] [--photo PHOTO] [--timezone TIMEZONE] [--backup]
+usage: main.py [-h] --fitfile FITFILE --photo PHOTO [--timezone TIMEZONE] [--backup] [--force]
 
 Geotag photos from fit file
 

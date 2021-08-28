@@ -10,13 +10,14 @@ from fit2geo import image, fitreader
 
 def main():
 	parser = argparse.ArgumentParser(description='Geotag photos from fit file')
-	parser.add_argument("--fitfile", "-f", type=str, help="FIT file")
-	parser.add_argument("--photo", "-p", type=str, help="Photo file or directory")
+	parser.add_argument("--fitfile", "-f", required=True, type=str, help="FIT file")
+	parser.add_argument("--photo", "-p",  required=True, type=str, help="Photo file or directory")
 	parser.add_argument("--timezone", type=str, help="Photo timezone", default="Europe/Berlin")
 	parser.add_argument("--backup", "-b", action="store_true", default=False, help="Backup original file")
 	parser.add_argument("--force", "-F", action="store_true", default=False, help="Override existing location")
 
 	args = parser.parse_args()
+
 
 	if not os.path.isfile(args.fitfile):
 		print("No such file: %s" % args.fitfile)
